@@ -44,6 +44,7 @@ def getbycode(url, code):
         file_exists=True
     else:
         file_exists=False
+    print file_exists
     nurl=url+"?code="+code+"&"+"page=1"
     #print nurl
     u=urllib.urlopen(nurl)
@@ -60,7 +61,7 @@ def getbycode(url, code):
         #print page, str(page)
         pageurl=url+"?code="+code+"&"+"page="+str(page)
         print pageurl
-        time.sleep(0.01)
+        #time.sleep(0.01)
         getbypage(pageurl,code)
     filename = "jmdata/"+code + ".data"
     f=open(filename,'r')
